@@ -6,6 +6,7 @@ import { FinancialNumberLayoutComponent } from './financial-number-layout/financ
 import { FinancialNumberInputComponent } from './financial-number-input/financial-number-input.component';
 import { FinancialNumberOutputComponent } from './financial-number-output/financial-number-output.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FinancialNumberRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class FinancialNumberModule { }

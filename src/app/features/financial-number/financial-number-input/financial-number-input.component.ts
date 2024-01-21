@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FinancialNumberInputComponent {
-  public financialNumber = new FormControl<string>('');
+  public financialNumber = new FormControl<string>('', [Validators.required]);
 
   constructor(
     private readonly _router: Router,
