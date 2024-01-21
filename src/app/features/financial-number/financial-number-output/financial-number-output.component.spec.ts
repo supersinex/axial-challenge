@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FinancialNumberOutputComponent } from './financial-number-output.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PipesModule } from '../../../pipes/pipes.module';
 
 describe('FinancialNumberOutputComponent', () => {
   let component: FinancialNumberOutputComponent;
@@ -8,7 +9,8 @@ describe('FinancialNumberOutputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FinancialNumberOutputComponent]
+      declarations: [FinancialNumberOutputComponent],
+      imports: [RouterTestingModule, PipesModule]
     });
     fixture = TestBed.createComponent(FinancialNumberOutputComponent);
     component = fixture.componentInstance;
