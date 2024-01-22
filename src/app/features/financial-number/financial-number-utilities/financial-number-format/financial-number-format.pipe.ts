@@ -1,15 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { FinancialNumberUtilitiesService } from '../financial-number-utilities.service';
 
 const multiplierMap: { [key: string]: number } = {
   k: 1e3,
   m: 1e6,
   b: 1e9,
+  // could easily add trillion here as well, etc.
 };
 
 @Pipe({
   name: 'financialNumberFormat'
 })
 export class FinancialNumberFormatPipe implements PipeTransform {
+
+  constructor(
+    private readonly _financialNumberUtilitiesService: FinancialNumberUtilitiesService
+  ) {}
 
   transform(rawValue: string, ...args: unknown[]): number | null {
     if (!rawValue || rawValue.length <= 1) {
@@ -18,10 +24,7 @@ export class FinancialNumberFormatPipe implements PipeTransform {
 
     const trimmedValue = rawValue.trim();
 
-    const [numericValue, suffix] = [
-      parseFloat(trimmedValue.slice(0, -1)),
-      trimmedValue.slice(-1).toLowerCase(),
-    ];
+    const [numericValue, suffix] = this._financialNumberUtilitiesService.parseFinancialNumber(trimmedValue);
     const multiplier = multiplierMap[suffix];
 
     /*

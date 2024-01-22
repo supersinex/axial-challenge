@@ -7,6 +7,7 @@ import { FinancialNumberInputComponent } from './financial-number-input/financia
 import { FinancialNumberOutputComponent } from './financial-number-output/financial-number-output.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { FinancialNumberUtilitiesModule } from './financial-number-utilities/financial-number-utilities.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     CommonModule,
     FinancialNumberRoutingModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    FinancialNumberUtilitiesModule
   ]
 })
 export class FinancialNumberModule { }

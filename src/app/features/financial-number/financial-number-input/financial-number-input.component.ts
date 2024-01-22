@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { financialNumberValidator } from '../../../utils/validators/financial-number-validator';
+import { FinancialNumberUtilitiesService } from '../financial-number-utilities/financial-number-utilities.service';
 
 @Component({
   selector: 'app-financial-number-input',
@@ -11,11 +10,12 @@ import { financialNumberValidator } from '../../../utils/validators/financial-nu
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FinancialNumberInputComponent {
-  public financialNumber = new FormControl<string>('', [Validators.required, financialNumberValidator()]);
+  public financialNumber = new FormControl<string>('', [Validators.required, this._financialNumberUtilitiesService.getFinancialNumberValidator()]);
 
   constructor(
     private readonly _router: Router,
-    private readonly _activatedRoute: ActivatedRoute
+    private readonly _activatedRoute: ActivatedRoute,
+    private readonly _financialNumberUtilitiesService: FinancialNumberUtilitiesService
   ) { }
 
   public handleSubmit(e: SubmitEvent): void {
