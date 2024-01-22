@@ -12,7 +12,7 @@ Run `npm run test` to execute the unit tests via Jest in the command line.
 
 ## Notes
 
-Thank you, Axial, for the challenge. It was a lot of fun to make, and I'd love the opportunity to talk about the projects, how and why I made the decisions I did, what would be done later with more time, etc.
+Thank you, Axial, for the challenge. It was a lot of fun to make, and I'd love the opportunity to talk about the project, how and why I made the decisions I did, what more would be done with additional time, etc.
 
 Cheers!
 
