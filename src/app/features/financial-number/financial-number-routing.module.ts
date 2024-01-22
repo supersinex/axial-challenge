@@ -25,11 +25,13 @@ const routes: Routes = [
       },
       {
         path: INPUT_ROUTE,
-        component: FinancialNumberInputComponent
+        component: FinancialNumberInputComponent,
+        data: { routeName: 'Input' }
       },
       {
         path: OUTPUT_ROUTE,
-        component: FinancialNumberOutputComponent
+        component: FinancialNumberOutputComponent,
+        data: { routeName: 'Output' }
       }
     ]
   }
