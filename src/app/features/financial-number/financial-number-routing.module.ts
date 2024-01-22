@@ -9,9 +9,12 @@ import { FinancialNumberOutputComponent } from './financial-number-output/financ
   when needing to use the route in more than one place, to save time for refactoring and ensuring name consistency,
   such as when establishing the route name and redirecting to that same route name from another route.
 */
-export const FINANCIAL_NUMBER_ROUTE = 'financial-number';
-const INPUT_ROUTE = 'input';
-const OUTPUT_ROUTE = 'output';
+
+export const ROUTE_PATHS = {
+  financialNumber: 'financial-number',
+  input: 'input',
+  output: 'output'
+}
 
 const routes: Routes = [
   {
@@ -20,16 +23,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: INPUT_ROUTE,
+        redirectTo: ROUTE_PATHS.input,
         pathMatch: 'full'
       },
       {
-        path: INPUT_ROUTE,
+        path: ROUTE_PATHS.input,
         component: FinancialNumberInputComponent,
         data: { routeName: 'Input' }
       },
       {
-        path: OUTPUT_ROUTE,
+        path: ROUTE_PATHS.output,
         component: FinancialNumberOutputComponent,
         data: { routeName: 'Output' }
       }

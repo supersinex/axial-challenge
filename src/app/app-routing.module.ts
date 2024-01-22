@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FINANCIAL_NUMBER_ROUTE } from './features/financial-number/financial-number-routing.module';
+import { ROUTE_PATHS } from './features/financial-number/financial-number-routing.module';
 
 const routes: Routes = [
   {
     path: '',
     /*
       For this simple app, we have no other views to consider, but in the event that more would be added, this can easily be swapped with a new component,
-      such as a dashboard or langing page.
+      such as a dashboard or landing page.
     */
-    redirectTo: FINANCIAL_NUMBER_ROUTE,
+    redirectTo: ROUTE_PATHS.financialNumber,
     pathMatch: 'full'
   },
   {
-    path: FINANCIAL_NUMBER_ROUTE,
+    path: ROUTE_PATHS.financialNumber,
     /*
       Lazy load the module for the Financial Number conversion. In a real app, features or modules that won't be used anywhere other than their
       designated place should be lazily loaded for optimization.
