@@ -1,10 +1,13 @@
 <div class="flex flex-col md:flex-row items-start gap-4">
     <form (submit)="handleSubmit($event)" class="w-full md:w-auto md:min-w-[500px] md:max-w-[500px]">
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-1 relative">
             <input
                 class="h-12 px-4 py-2 text-lg rounded-md bg-zinc-800 border-2 border-transparent hover:border-gray-600 focus:border-gray-500 transition-colors duration-200 ease-in-out outline-none"
                 placeholder="Enter a financial number. ex: 250k" type="text"
                 [formControl]="financialNumber" />
+            <button type="button" (click)="clearInput()" *ngIf="financialNumber.value?.length" class="absolute top-3 right-2 rounded-md bg-zinc-600 text-gray-50 text-xs px-2 py-1 hover:bg-zinc-500 transition-colors duration-200 ease-in-out">
+                Clear
+            </button>
             <div *ngIf="financialNumber.touched && financialNumber.hasError('financialNumber') && !financialNumber.hasError('required')"
                 class="text-sm text-red-400 px-2 py-1">
                 Invalid pattern. A financial number should consist of numbers, followed by a single letter. Ex: 250k,

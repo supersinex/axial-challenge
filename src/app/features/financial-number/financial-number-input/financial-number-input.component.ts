@@ -30,4 +30,8 @@ export class FinancialNumberInputComponent {
       this.financialNumber.markAsTouched();
     }
   }
+
+  public clearInput(): void {
+    this.financialNumber.reset();
+  }
 }
