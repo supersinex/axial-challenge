@@ -1,10 +1,10 @@
 # AxialChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+This project was generated via `ng new` with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
 ## Running the project
 
-Run `ng serve` or `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ensure packages are up to date with `npm install`. Run `ng serve` or `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Running unit tests
 
